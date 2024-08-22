@@ -700,6 +700,14 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A column transfers load from the superstructure into the ground.</rdfs:comment>
 </owl:Class>
 
+<owl:Class rdf:about="#Disintegration">
+  <rdfs:subClassOf rdf:resource="#Defect"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Surface__Contamination">
+  <rdfs:subClassOf rdf:resource="#Defect"/>
+</owl:Class>
+
 <owl:Class rdf:about="#Substructure">
   <rdfs:subClassOf rdf:resource="#Component"/>
   <rdfs:subClassOf>
@@ -715,6 +723,27 @@
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The superstructure carries loads from the deck across the span and to the bridge supports.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Superstructure">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#has_defect"/>
+      <owl:someValuesFrom rdf:resource="#Defect"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#has_material"/>
+      <owl:someValuesFrom rdf:resource="#Material"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transfers load from superstructure amd deck to foundation</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Discontinuity">
+  <rdfs:subClassOf rdf:resource="#Defect"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Acid_Attack">
@@ -748,23 +777,6 @@
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carries loads from the deck across the span and to the bridge supports.</rdfs:comment>
-</owl:Class>
-
-<owl:Class rdf:about="#Superstructure">
-  <rdfs:subClassOf rdf:resource="#Component"/>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#has_defect"/>
-      <owl:someValuesFrom rdf:resource="#Defect"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:subClassOf>
-    <owl:Restriction>
-      <owl:onProperty rdf:resource="#has_material"/>
-      <owl:someValuesFrom rdf:resource="#Material"/>
-    </owl:Restriction>
-  </rdfs:subClassOf>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transfers load from superstructure amd deck to foundation</rdfs:comment>
 </owl:Class>
 
 <owl:Class rdf:about="#Arch_Bridge">
@@ -954,10 +966,6 @@
   <rdfs:subClassOf rdf:resource="#Event"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Discontinuity">
-  <rdfs:subClassOf rdf:resource="#Defect"/>
-</owl:Class>
-
 <owl:Class rdf:about="#Culvert_Bridge">
   <rdfs:subClassOf rdf:resource="#Bridge_Type"/>
 </owl:Class>
@@ -1013,10 +1021,6 @@
   <rdfs:subClassOf rdf:resource="#Human-Induced_Event"/>
 </owl:Class>
 
-<owl:Class rdf:about="#Disintegration">
-  <rdfs:subClassOf rdf:resource="#Defect"/>
-</owl:Class>
-
 <owl:Class rdf:about="#Drainage">
   <rdfs:subClassOf rdf:resource="#Superstructure"/>
   <rdfs:subClassOf>
@@ -1068,10 +1072,6 @@
 
 <owl:Class rdf:about="#Drying">
   <rdfs:subClassOf rdf:resource="#Environmental_Event"/>
-</owl:Class>
-
-<owl:Class rdf:about="#Surface__Contamination">
-  <rdfs:subClassOf rdf:resource="#Defect"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Exposure_To_Normal__Atmospheric_Condition">
@@ -1409,14 +1409,13 @@
 
 <owl:Class rdf:about="#PrestressedConcrete">
   <rdfs:subClassOf rdf:resource="#Concrete"/>
-  <rdfs:subClassOf rdf:resource="#Material"/>
   <owl:disjointWith rdf:resource="#ReinforcedConcrete"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#PrestressedConcrete"/>
 </owl:Class>
 
 <owl:Class rdf:about="#ReinforcedConcrete">
   <rdfs:subClassOf rdf:resource="#Concrete"/>
-  <rdfs:subClassOf rdf:resource="#Material"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#ReinforcedConcrete"/>
 </owl:Class>
@@ -1763,6 +1762,125 @@
   <rdfs:subClassOf rdf:resource="#Environmental_Event"/>
 </owl:Class>
 
+<owl:NamedIndividual rdf:about="#LeftCantilever1">
+  <owl:sameAs rdf:resource="#RightCantilever1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RightCantilever1">
+  <rdf:type rdf:resource="#Cap"/>
+  <has_defect rdf:resource="#RightCantileverCrack1"/>
+  <has_defect rdf:resource="#RightCantileverEfflorescence1"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RightCantileverCrack1">
+  <rdf:type rdf:resource="#Crack"/>
+  <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</has_spacing>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</has_width>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RightCantileverEfflorescence1">
+  <rdf:type rdf:resource="#Efflorescence"/>
+  <is_efflorescent rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_efflorescent>
+  <is_rust_stained rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_rust_stained>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LeftColumnPier1">
+  <rdf:type rdf:resource="#Column_Pier"/>
+  <has_defect rdf:resource="#LeftColumnPierCrack1"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LeftColumnPierCrack1">
+  <rdf:type rdf:resource="#Crack"/>
+  <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.1</has_spacing>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.19</has_width>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PrestressedConcreteGirderBridge">
+  <rdf:type rdf:resource="#Bridge"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PrestressedConcreteOpenGirder1">
+  <rdf:type rdf:resource="#Open_Grider"/>
+  <has_material rdf:resource="#PrestressedConcrete"/>
+  <has_number_of_griders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</has_number_of_griders>
+  <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">268.0</has_span_length>
+  <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2144.0</has_total_length>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteAbutment1">
+  <rdf:type rdf:resource="#Abutment"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+  <has_number_of_abutments rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_number_of_abutments>
+  <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.0</has_span_length>
+  <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">88.0</has_total_length>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteBridgeRailing1">
+  <rdf:type rdf:resource="#Bridge_Railing"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+  <has_number_of_railings rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</has_number_of_railings>
+  <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">270.0</has_span_length>
+  <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">540.0</has_total_length>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteColumn1">
+  <rdf:type rdf:resource="#Column_Pier"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+  <has_number_of_columns_per_pier rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</has_number_of_columns_per_pier>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteDeck1">
+  <rdf:type rdf:resource="#Deck"/>
+  <has_defect rdf:resource="#ReinforcedConcreteDeckCrack1"/>
+  <has_defect rdf:resource="#ReinforcedConcreteDeckExposedbar1"/>
+  <has_defect rdf:resource="#ReinforcedConcreteDeckSpallation1"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+  <has_condition_state rdf:resource="#Bad"/>
+  <has_span_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11880.0</has_span_area>
+  <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">270.0</has_span_length>
+  <has_span_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">44.0</has_span_width>
+  <has_condition_index rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72</has_condition_index>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteDeckCrack1">
+  <rdf:type rdf:resource="#Crack"/>
+  <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.1</has_spacing>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.011</has_width>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteDeckExposedbar1">
+  <rdf:type rdf:resource="#Exposedbar"/>
+  <is_exposed_bar rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_exposed_bar>
+  <is_section_loss rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_section_loss>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcreteDeckSpallation1">
+  <rdf:type rdf:resource="#Spallation"/>
+  <has_depth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</has_depth>
+  <has_diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</has_diameter>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcretePierCapExposedbar1">
+  <rdf:type rdf:resource="#Exposedbar"/>
+  <is_exposed_bar rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_exposed_bar>
+  <is_section_loss rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_section_loss>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ReinforcedConcretePierCapSpallation1">
+  <rdf:type rdf:resource="#Spallation"/>
+  <has_depth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</has_depth>
+  <has_diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</has_diameter>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Reinforced_Concrete_Pier_Cap">
+  <rdf:type rdf:resource="#Pier_Cap"/>
+  <has_defect rdf:resource="#ReinforcedConcretePierCapExposedbar1"/>
+  <has_defect rdf:resource="#ReinforcedConcretePierCapSpallation1"/>
+  <has_material rdf:resource="#ReinforcedConcrete"/>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="#component_test">
   <rdf:type rdf:resource="#Deck_Bay"/>
   <has_defect rdf:resource="#test_crack"/>
@@ -1830,161 +1948,6 @@
 <rdf:Description>
   <has_severity_level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</has_severity_level>
 </rdf:Description>
-
-<swrl:Imp>
-  <swrl:body>
-    <swrl:AtomList>
-      <rdf:first>
-        <swrl:ClassAtom>
-          <swrl:classPredicate rdf:resource="#Spallation"/>
-          <swrl:argument1 rdf:resource="#c"/>
-        </swrl:ClassAtom>
-      </rdf:first>
-      <rdf:rest>
-        <swrl:AtomList>
-          <rdf:first>
-            <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="#has_radius"/>
-              <swrl:argument1 rdf:resource="#c"/>
-              <swrl:argument2 rdf:resource="#r"/>
-            </swrl:DatavaluedPropertyAtom>
-          </rdf:first>
-          <rdf:rest>
-            <swrl:AtomList>
-              <rdf:first>
-                <swrl:BuiltinAtom>
-                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
-                  <swrl:arguments>
-                    <rdf:Description>
-                      <rdf:first rdf:resource="#sqrRadius"/>
-                      <rdf:rest>
-                        <rdf:Description>
-                          <rdf:first rdf:resource="#r"/>
-                          <rdf:rest>
-                            <rdf:Description>
-                              <rdf:first rdf:resource="#r"/>
-                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                          </rdf:rest>
-                        </rdf:Description>
-                      </rdf:rest>
-                    </rdf:Description>
-                  </swrl:arguments>
-                </swrl:BuiltinAtom>
-              </rdf:first>
-              <rdf:rest>
-                <swrl:AtomList>
-                  <rdf:first>
-                    <swrl:BuiltinAtom>
-                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
-                      <swrl:arguments>
-                        <rdf:List>
-                          <rdf:first rdf:resource="#area"/>
-                          <rdf:rest>
-                            <rdf:List>
-                              <rdf:first rdf:resource="#sqrRadius"/>
-                              <rdf:rest>
-                                <rdf:List>
-                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.14159</rdf:first>
-                                </rdf:List>
-                              </rdf:rest>
-                            </rdf:List>
-                          </rdf:rest>
-                        </rdf:List>
-                      </swrl:arguments>
-                    </swrl:BuiltinAtom>
-                  </rdf:first>
-                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                </swrl:AtomList>
-              </rdf:rest>
-            </swrl:AtomList>
-          </rdf:rest>
-        </swrl:AtomList>
-      </rdf:rest>
-    </swrl:AtomList>
-  </swrl:body>
-  <swrl:head>
-    <swrl:AtomList>
-      <rdf:first>
-        <swrl:DatavaluedPropertyAtom>
-          <swrl:propertyPredicate rdf:resource="#has_area"/>
-          <swrl:argument1 rdf:resource="#c"/>
-          <swrl:argument2 rdf:resource="#area"/>
-        </swrl:DatavaluedPropertyAtom>
-      </rdf:first>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    </swrl:AtomList>
-  </swrl:head>
-  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
-</swrl:Imp>
-
-<swrl:Imp>
-  <swrl:body>
-    <swrl:AtomList>
-      <rdf:first>
-        <swrl:ClassAtom>
-          <swrl:classPredicate rdf:resource="#Spallation"/>
-          <swrl:argument1 rdf:resource="#c"/>
-        </swrl:ClassAtom>
-      </rdf:first>
-      <rdf:rest>
-        <swrl:AtomList>
-          <rdf:first>
-            <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="#has_diameter"/>
-              <swrl:argument1 rdf:resource="#c"/>
-              <swrl:argument2 rdf:resource="#d"/>
-            </swrl:DatavaluedPropertyAtom>
-          </rdf:first>
-          <rdf:rest>
-            <swrl:AtomList>
-              <rdf:first>
-                <swrl:BuiltinAtom>
-                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
-                  <swrl:arguments>
-                    <rdf:List>
-                      <rdf:first rdf:resource="#r"/>
-                      <rdf:rest>
-                        <rdf:List>
-                          <rdf:first rdf:resource="#d"/>
-                          <rdf:rest>
-                            <rdf:List>
-                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
-                            </rdf:List>
-                          </rdf:rest>
-                        </rdf:List>
-                      </rdf:rest>
-                    </rdf:List>
-                  </swrl:arguments>
-                </swrl:BuiltinAtom>
-              </rdf:first>
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </swrl:AtomList>
-          </rdf:rest>
-        </swrl:AtomList>
-      </rdf:rest>
-    </swrl:AtomList>
-  </swrl:body>
-  <swrl:head>
-    <swrl:AtomList>
-      <rdf:first>
-        <swrl:DatavaluedPropertyAtom>
-          <swrl:propertyPredicate rdf:resource="#has_radius"/>
-          <swrl:argument1 rdf:resource="#c"/>
-          <swrl:argument2 rdf:resource="#r"/>
-        </swrl:DatavaluedPropertyAtom>
-      </rdf:first>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    </swrl:AtomList>
-  </swrl:head>
-  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spallation radius</rdfs:label>
-</swrl:Imp>
 
 <swrl:Imp>
   <swrl:body>
@@ -2210,6 +2173,186 @@
   <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if an exposedbar has no section loss and is moderate</rdfs:comment>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Exposedbar moderate</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Exposedbar"/>
+          <swrl:argument1 rdf:resource="#d"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#is_severe"/>
+              <swrl:argument1 rdf:resource="#d"/>
+              <swrl:argument2 rdf:resource="#b"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#b"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_severity"/>
+          <swrl:argument1 rdf:resource="#d"/>
+          <swrl:argument2 rdf:resource="#Severe"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assign Severe Exposedbar</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Exposedbar"/>
+          <swrl:argument1 rdf:resource="#d"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#is_moderate"/>
+              <swrl:argument1 rdf:resource="#d"/>
+              <swrl:argument2 rdf:resource="#b"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#b"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_severity"/>
+          <swrl:argument1 rdf:resource="#d"/>
+          <swrl:argument2 rdf:resource="#Moderate"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assign Moderate exposed bar</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Exposedbar"/>
+          <swrl:argument1 rdf:resource="#d"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#is_minor"/>
+              <swrl:argument1 rdf:resource="#d"/>
+              <swrl:argument2 rdf:resource="#b"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#b"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdf:first>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_severity"/>
+          <swrl:argument1 rdf:resource="#d"/>
+          <swrl:argument2 rdf:resource="#Minor"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assign Minor Exposedbar</rdfs:label>
 </swrl:Imp>
 
 <swrl:Imp>
@@ -7129,6 +7272,161 @@
   <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if a spallation has a depth of severe</rdfs:comment>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spallation depth severe</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Spallation"/>
+          <swrl:argument1 rdf:resource="#c"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_radius"/>
+              <swrl:argument1 rdf:resource="#c"/>
+              <swrl:argument2 rdf:resource="#r"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                  <swrl:arguments>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="#sqrRadius"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="#r"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="#r"/>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest>
+                <swrl:AtomList>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                      <swrl:arguments>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#area"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:first rdf:resource="#sqrRadius"/>
+                              <rdf:rest>
+                                <rdf:List>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.14159</rdf:first>
+                                </rdf:List>
+                              </rdf:rest>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </swrl:AtomList>
+              </rdf:rest>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:DatavaluedPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_area"/>
+          <swrl:argument1 rdf:resource="#c"/>
+          <swrl:argument2 rdf:resource="#area"/>
+        </swrl:DatavaluedPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Spallation"/>
+          <swrl:argument1 rdf:resource="#c"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_diameter"/>
+              <swrl:argument1 rdf:resource="#c"/>
+              <swrl:argument2 rdf:resource="#d"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <swrl:AtomList>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                  <swrl:arguments>
+                    <rdf:List>
+                      <rdf:first rdf:resource="#r"/>
+                      <rdf:rest>
+                        <rdf:List>
+                          <rdf:first rdf:resource="#d"/>
+                          <rdf:rest>
+                            <rdf:List>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</rdf:first>
+                            </rdf:List>
+                          </rdf:rest>
+                        </rdf:List>
+                      </rdf:rest>
+                    </rdf:List>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </swrl:AtomList>
+          </rdf:rest>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:DatavaluedPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_radius"/>
+          <swrl:argument1 rdf:resource="#c"/>
+          <swrl:argument2 rdf:resource="#r"/>
+        </swrl:DatavaluedPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spallation radius</rdfs:label>
 </swrl:Imp>
 
 

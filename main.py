@@ -34,7 +34,6 @@ def defect_material_type():
 def severity_level_of_defect():
     sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True)
     specific_defect = onto.search_one(iri="*test_crack")
-    print(specific_defect)
     if specific_defect:
         # Retrieve the severity level of the specific defect
         severity_level = specific_defect.has_severity_level
