@@ -2470,6 +2470,92 @@
     
 
 
+    <!-- http://example.org/bridge_inspection_v1.owl#Ccrack3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#Ccrack3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Vertical_Crack"/>
+        <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</has_spacing>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">32</has_span_length>
+        <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</has_width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#Concrete -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#Concrete">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Concrete"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ConcreteCulvert4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ConcreteCulvert4">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Culvert"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertExposedbar"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertExposedbar1"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation1"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation2"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#Concrete"/>
+        <has_number_of_barrels rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</has_number_of_barrels>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</has_span_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ConcreteCulvertExposedbar -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertExposedbar">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Exposedbar"/>
+        <is_exposed_bar rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_exposed_bar>
+        <is_section_loss rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</is_section_loss>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ConcreteCulvertExposedbar1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertExposedbar1">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Exposedbar"/>
+        <is_exposed_bar rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_exposed_bar>
+        <is_section_loss rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</is_section_loss>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Spallation"/>
+        <has_depth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</has_depth>
+        <has_diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</has_diameter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation1">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Spallation"/>
+        <has_depth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</has_depth>
+        <has_diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</has_diameter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ConcreteCulvertSpallation2">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Spallation"/>
+        <has_depth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.1</has_depth>
+        <has_diameter rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</has_diameter>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/bridge_inspection_v1.owl#Critical -->
 
     <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#Critical">
@@ -2552,6 +2638,18 @@
     
 
 
+    <!-- http://example.org/bridge_inspection_v1.owl#PrestressedConcreteClosedBoxGirder3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#PrestressedConcreteClosedBoxGirder3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Box_Grider"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#PrestressedConcrete"/>
+        <has_number_of_griders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</has_number_of_griders>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">63</has_span_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">504</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/bridge_inspection_v1.owl#PrestressedConcreteGirderBridge -->
 
     <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#PrestressedConcreteGirderBridge">
@@ -2603,6 +2701,42 @@
     
 
 
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteAbutment3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteAbutment3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Abutment"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_number_of_abutments rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_number_of_abutments>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40</has_span_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteAbutment5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteAbutment5">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Abutment"/>
+        <has_number_of_abutments rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_number_of_abutments>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</has_span_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteApproachSlab3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteApproachSlab3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Approach_Slab"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_number_of_approaches rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_number_of_approaches>
+        <has_span_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">270</has_span_area>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27</has_span_length>
+        <has_span_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</has_span_width>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteBridgeRailing1 -->
 
     <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteBridgeRailing1">
@@ -2611,6 +2745,18 @@
         <has_number_of_railings rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</has_number_of_railings>
         <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">270.0</has_span_length>
         <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">540.0</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteBridgeRailing3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteBridgeRailing3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Bridge_Railing"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_number_of_railings rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_number_of_railings>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</has_span_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">130</has_total_length>
     </owl:NamedIndividual>
     
 
@@ -2656,6 +2802,32 @@
     
 
 
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeck3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeck3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Deck"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack3"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_span_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2080</has_span_area>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</has_span_length>
+        <has_span_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">32</has_span_width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeck5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeck5">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Deck"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack5"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_span_area rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2700</has_span_area>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45</has_span_length>
+        <has_span_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</has_span_width>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack1 -->
 
     <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack1">
@@ -2672,6 +2844,26 @@
         <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Crack"/>
         <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</has_spacing>
         <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.015</has_width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack3">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Transverse_Crack"/>
+        <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.1</has_spacing>
+        <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.011</has_width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeckCrack5">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Transverse_Crack"/>
+        <has_spacing rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.1</has_spacing>
+        <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.011</has_width>
     </owl:NamedIndividual>
     
 
@@ -2706,6 +2898,18 @@
     
 
 
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteHeadwalls4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteHeadwalls4">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Headwall"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_number_of_headwalls rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</has_number_of_headwalls>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23</has_span_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">46</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcretePierCapExposedbar1 -->
 
     <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcretePierCapExposedbar1">
@@ -2733,6 +2937,31 @@
         <has_number_of_piers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</has_number_of_piers>
         <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42</has_span_length>
         <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42</has_total_length>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteWingwalls -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteWingwalls">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Wingwall"/>
+        <has_defect rdf:resource="http://example.org/bridge_inspection_v1.owl#Ccrack3"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_number_of_wingwalls rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</has_number_of_wingwalls>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</has_span_length>
+        <has_span_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</has_span_length>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteWingwalls4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteWingwalls4">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Wingwall"/>
+        <has_material rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcrete"/>
+        <has_number_of_wingwalls rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</has_number_of_wingwalls>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12</has_total_length>
+        <has_total_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48</has_total_length>
     </owl:NamedIndividual>
     
 
@@ -2783,6 +3012,36 @@
 
     <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#Severe">
         <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Severe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#SingleBarrelReinforcedConcreteBoxCulvert -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#SingleBarrelReinforcedConcreteBoxCulvert">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Bridge"/>
+        <has_component rdf:resource="http://example.org/bridge_inspection_v1.owl#ConcreteCulvert4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#SingleSpanAdjacentPrestressedConcreteBoxBeamBridge -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#SingleSpanAdjacentPrestressedConcreteBoxBeamBridge">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Bridge"/>
+        <has_component rdf:resource="http://example.org/bridge_inspection_v1.owl#PrestressedConcreteClosedBoxGirder3"/>
+        <has_component rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteApproachSlab3"/>
+        <has_component rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteBridgeRailing3"/>
+        <has_component rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteDeck3"/>
+        <has_component rdf:resource="http://example.org/bridge_inspection_v1.owl#ReinforcedConcreteWingwalls"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/bridge_inspection_v1.owl#SingleSpanSteelMulti-GirderBridge -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/bridge_inspection_v1.owl#SingleSpanSteelMulti-GirderBridge">
+        <rdf:type rdf:resource="http://example.org/bridge_inspection_v1.owl#Bridge"/>
     </owl:NamedIndividual>
     
 
