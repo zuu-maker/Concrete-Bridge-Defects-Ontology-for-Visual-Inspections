@@ -198,4 +198,6 @@ with onto:
                 print("Specific defect not found.")
 
 
-
+my_comp = Component("ReinforcedConcreteApproachSlab5")
+my_comp.assign_component_condition_index()
+my_comp.assign_component_condition_state()
